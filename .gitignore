@@ -1,3 +1,7 @@
+# common folders and files
 **/.DS_Store
 **/.python-version
 .venv/
+
+# specific folders and files
+/bt.txt
