@@ -1,0 +1,55 @@
+[2022-01-31 18:06:00,125] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: twitter_dag.twitter_aluraonline 2022-01-31T21:01:14.164872+00:00 [queued]>
+[2022-01-31 18:06:00,154] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: twitter_dag.twitter_aluraonline 2022-01-31T21:01:14.164872+00:00 [queued]>
+[2022-01-31 18:06:00,154] {taskinstance.py:1095} INFO - 
+--------------------------------------------------------------------------------
+[2022-01-31 18:06:00,154] {taskinstance.py:1096} INFO - Starting attempt 1 of 1
+[2022-01-31 18:06:00,154] {taskinstance.py:1097} INFO - 
+--------------------------------------------------------------------------------
+[2022-01-31 18:06:00,175] {taskinstance.py:1115} INFO - Executing <Task(TwitterOperator): twitter_aluraonline> on 2022-01-31T21:01:14.164872+00:00
+[2022-01-31 18:06:00,180] {standard_task_runner.py:52} INFO - Started process 85378 to run task
+[2022-01-31 18:06:00,192] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'twitter_dag', 'twitter_aluraonline', '2022-01-31T21:01:14.164872+00:00', '--job-id', '34', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/twitter_dag.py', '--cfg-path', '/var/folders/k6/528t8tnx5llf4w8y5xx1rrm80000gn/T/tmpfwq9uq0u', '--error-file', '/var/folders/k6/528t8tnx5llf4w8y5xx1rrm80000gn/T/tmpak36byuf']
+[2022-01-31 18:06:00,194] {standard_task_runner.py:77} INFO - Job 34: Subtask twitter_aluraonline
+[2022-01-31 18:06:00,247] {logging_mixin.py:109} INFO - Running <TaskInstance: twitter_dag.twitter_aluraonline 2022-01-31T21:01:14.164872+00:00 [running]> on host 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.ip6.arpa
+[2022-01-31 18:06:00,303] {taskinstance.py:1254} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=twitter_dag
+AIRFLOW_CTX_TASK_ID=twitter_aluraonline
+AIRFLOW_CTX_EXECUTION_DATE=2022-01-31T21:01:14.164872+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-01-31T21:01:14.164872+00:00
+[2022-01-31 18:06:00,313] {base.py:79} INFO - Using connection to: id: twitter_default. Host: https://api.twitter.com, Port: None, Schema: , Login: , Password: None, extra: {'Authorization': '***'}
+[2022-01-31 18:06:00,316] {twitter_hook.py:36} INFO - URL: https://api.twitter.com/2/tweets/search/recent?query=AluraOnline&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2022-01-31T21:01:14.00Z&end_time=2022-01-31T21:01:14.00Z
+[2022-01-31 18:06:00,816] {http.py:154} ERROR - HTTP error: Bad Request
+[2022-01-31 18:06:00,817] {http.py:155} ERROR - {"errors":[{"parameters":{"start_time":["2022-01-31T21:01Z"],"end_time":["2022-01-31T21:01Z"]},"message":"Invalid 'start_time':'2022-01-31T21:01Z'. 'start_time' must be before 'end_time':2022-01-31T21:01Z"}],"title":"Invalid Request","detail":"One or more parameters to your request was invalid.","type":"https://api.twitter.com/2/problems/invalid-request"}
+[2022-01-31 18:06:00,822] {taskinstance.py:1463} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/Users/bezerraescossia/Github/studies/twitter-project/.venv/lib/python3.7/site-packages/airflow/providers/http/hooks/http.py", line 152, in check_response
+    response.raise_for_status()
+  File "/Users/bezerraescossia/Github/studies/twitter-project/.venv/lib/python3.7/site-packages/requests/models.py", line 953, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://api.twitter.com/2/tweets/search/recent?query=AluraOnline&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2022-01-31T21:01:14.00Z&end_time=2022-01-31T21:01:14.00Z
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/bezerraescossia/Github/studies/twitter-project/.venv/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1165, in _run_raw_task
+    self._prepare_and_execute_task_with_callbacks(context, task)
+  File "/Users/bezerraescossia/Github/studies/twitter-project/.venv/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1283, in _prepare_and_execute_task_with_callbacks
+    result = self._execute_task(context, task_copy)
+  File "/Users/bezerraescossia/Github/studies/twitter-project/.venv/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1313, in _execute_task
+    result = task_copy.execute(context=context)
+  File "/Users/bezerraescossia/Github/studies/twitter-project/airflow/plugins/operators/twitter_operator.py", line 49, in execute
+    for pg in hook.run():
+  File "/Users/bezerraescossia/Github/studies/twitter-project/airflow/plugins/hooks/twitter_hook.py", line 56, in run
+    yield from self.paginate(url, session)
+  File "/Users/bezerraescossia/Github/studies/twitter-project/airflow/plugins/hooks/twitter_hook.py", line 45, in paginate
+    data = self.connect_to_endpoint(full_url, session)
+  File "/Users/bezerraescossia/Github/studies/twitter-project/airflow/plugins/hooks/twitter_hook.py", line 37, in connect_to_endpoint
+    return self.run_and_check(session, prep, {}).json()
+  File "/Users/bezerraescossia/Github/studies/twitter-project/.venv/lib/python3.7/site-packages/airflow/providers/http/hooks/http.py", line 198, in run_and_check
+    self.check_response(response)
+  File "/Users/bezerraescossia/Github/studies/twitter-project/.venv/lib/python3.7/site-packages/airflow/providers/http/hooks/http.py", line 156, in check_response
+    raise AirflowException(str(response.status_code) + ":" + response.reason)
+airflow.exceptions.AirflowException: 400:Bad Request
+[2022-01-31 18:06:00,833] {taskinstance.py:1513} INFO - Marking task as FAILED. dag_id=twitter_dag, task_id=twitter_aluraonline, execution_date=20220131T210114, start_date=20220131T210600, end_date=20220131T210600
+[2022-01-31 18:06:00,891] {local_task_job.py:151} INFO - Task exited with return code 1
+[2022-01-31 18:06:00,927] {local_task_job.py:261} INFO - 0 downstream tasks scheduled from follow-on schedule check

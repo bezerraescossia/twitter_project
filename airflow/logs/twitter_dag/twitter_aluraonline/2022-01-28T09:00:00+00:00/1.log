@@ -1,0 +1,102 @@
+[2022-01-31 18:03:54,439] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: twitter_dag.twitter_aluraonline 2022-01-28T09:00:00+00:00 [queued]>
+[2022-01-31 18:03:54,469] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: twitter_dag.twitter_aluraonline 2022-01-28T09:00:00+00:00 [queued]>
+[2022-01-31 18:03:54,469] {taskinstance.py:1095} INFO - 
+--------------------------------------------------------------------------------
+[2022-01-31 18:03:54,470] {taskinstance.py:1096} INFO - Starting attempt 1 of 1
+[2022-01-31 18:03:54,470] {taskinstance.py:1097} INFO - 
+--------------------------------------------------------------------------------
+[2022-01-31 18:03:54,528] {taskinstance.py:1115} INFO - Executing <Task(TwitterOperator): twitter_aluraonline> on 2022-01-28T09:00:00+00:00
+[2022-01-31 18:03:54,540] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'twitter_dag', 'twitter_aluraonline', '2022-01-28T09:00:00+00:00', '--job-id', '27', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/twitter_dag.py', '--cfg-path', '/var/folders/k6/528t8tnx5llf4w8y5xx1rrm80000gn/T/tmpyhuxa5y6', '--error-file', '/var/folders/k6/528t8tnx5llf4w8y5xx1rrm80000gn/T/tmpka751jzk']
+[2022-01-31 18:03:54,543] {standard_task_runner.py:77} INFO - Job 27: Subtask twitter_aluraonline
+[2022-01-31 18:03:54,539] {standard_task_runner.py:52} INFO - Started process 85194 to run task
+[2022-01-31 18:03:54,624] {logging_mixin.py:109} INFO - Running <TaskInstance: twitter_dag.twitter_aluraonline 2022-01-28T09:00:00+00:00 [running]> on host 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.ip6.arpa
+[2022-01-31 18:03:54,719] {taskinstance.py:1254} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=twitter_dag
+AIRFLOW_CTX_TASK_ID=twitter_aluraonline
+AIRFLOW_CTX_EXECUTION_DATE=2022-01-28T09:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-01-28T09:00:00+00:00
+[2022-01-31 18:03:54,733] {base.py:79} INFO - Using connection to: id: twitter_default. Host: https://api.twitter.com, Port: None, Schema: , Login: , Password: None, extra: {'Authorization': '***'}
+[2022-01-31 18:03:54,735] {twitter_hook.py:36} INFO - URL: https://api.twitter.com/2/tweets/search/recent?query=AluraOnline&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2022-01-28T09:00:00.00Z&end_time=2022-01-29T09:00:00.00Z
+[2022-01-31 18:03:55,296] {twitter_hook.py:36} INFO - URL: https://api.twitter.com/2/tweets/search/recent?query=AluraOnline&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2022-01-28T09:00:00.00Z&end_time=2022-01-29T09:00:00.00Z&next_token=b26v89c19zqg8o3fpe4823gd5s1g800fyl7iuq39l7se5
+[2022-01-31 18:03:55,559] {twitter_hook.py:36} INFO - URL: https://api.twitter.com/2/tweets/search/recent?query=AluraOnline&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2022-01-28T09:00:00.00Z&end_time=2022-01-29T09:00:00.00Z&next_token=b26v89c19zqg8o3fpe4823fgjdjhb47wbc98pvxjlcnel
+[2022-01-31 18:03:55,831] {twitter_hook.py:36} INFO - URL: https://api.twitter.com/2/tweets/search/recent?query=AluraOnline&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2022-01-28T09:00:00.00Z&end_time=2022-01-29T09:00:00.00Z&next_token=b26v89c19zqg8o3fpe4823evaou96m3ej1w0okiz99u9p
+[2022-01-31 18:03:56,103] {twitter_hook.py:36} INFO - URL: https://api.twitter.com/2/tweets/search/recent?query=AluraOnline&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2022-01-28T09:00:00.00Z&end_time=2022-01-29T09:00:00.00Z&next_token=b26v89c19zqg8o3fpe4823e9l8ihmly4qp9df1lkv62yl
+[2022-01-31 18:03:56,356] {twitter_hook.py:36} INFO - URL: https://api.twitter.com/2/tweets/search/recent?query=AluraOnline&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2022-01-28T09:00:00.00Z&end_time=2022-01-29T09:00:00.00Z&next_token=b26v89c19zqg8o3fpe4821c8f7x0jyxcar61mvfdxwxh9
+[2022-01-31 18:03:56,667] {twitter_hook.py:36} INFO - URL: https://api.twitter.com/2/tweets/search/recent?query=AluraOnline&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2022-01-28T09:00:00.00Z&end_time=2022-01-29T09:00:00.00Z&next_token=b26v89c19zqg8o3fpe4821bc0fdk62ebwugku4v38ehkt
+[2022-01-31 18:03:56,965] {twitter_hook.py:36} INFO - URL: https://api.twitter.com/2/tweets/search/recent?query=AluraOnline&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2022-01-28T09:00:00.00Z&end_time=2022-01-29T09:00:00.00Z&next_token=b26v89c19zqg8o3fpe4821aqh2edmiyfnrr7sqx22to59
+[2022-01-31 18:03:57,207] {twitter_hook.py:36} INFO - URL: https://api.twitter.com/2/tweets/search/recent?query=AluraOnline&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2022-01-28T09:00:00.00Z&end_time=2022-01-29T09:00:00.00Z&next_token=b26v89c19zqg8o3fpe4821afn59aczu7x7u1rhvrdvnnh
+[2022-01-31 18:03:57,450] {taskinstance.py:1219} INFO - Marking task as SUCCESS. dag_id=twitter_dag, task_id=twitter_aluraonline, execution_date=20220128T090000, start_date=20220131T210354, end_date=20220131T210357
+[2022-01-31 18:03:57,477] {local_task_job.py:151} INFO - Task exited with return code 0
+[2022-01-31 18:03:57,545] {local_task_job.py:261} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2022-02-02 10:55:54,851] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: twitter_dag.twitter_aluraonline 2022-01-28T09:00:00+00:00 [queued]>
+[2022-02-02 10:55:54,859] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: twitter_dag.twitter_aluraonline 2022-01-28T09:00:00+00:00 [queued]>
+[2022-02-02 10:55:54,859] {taskinstance.py:1095} INFO - 
+--------------------------------------------------------------------------------
+[2022-02-02 10:55:54,859] {taskinstance.py:1096} INFO - Starting attempt 1 of 1
+[2022-02-02 10:55:54,859] {taskinstance.py:1097} INFO - 
+--------------------------------------------------------------------------------
+[2022-02-02 10:55:54,868] {taskinstance.py:1115} INFO - Executing <Task(TwitterOperator): twitter_aluraonline> on 2022-01-28T09:00:00+00:00
+[2022-02-02 10:55:54,871] {standard_task_runner.py:52} INFO - Started process 19690 to run task
+[2022-02-02 10:55:54,881] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'twitter_dag', 'twitter_aluraonline', '2022-01-28T09:00:00+00:00', '--job-id', '3', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/twitter_dag.py', '--cfg-path', '/var/folders/k6/528t8tnx5llf4w8y5xx1rrm80000gn/T/tmps1bl0byi', '--error-file', '/var/folders/k6/528t8tnx5llf4w8y5xx1rrm80000gn/T/tmpeigr64v5']
+[2022-02-02 10:55:54,883] {standard_task_runner.py:77} INFO - Job 3: Subtask twitter_aluraonline
+[2022-02-02 10:55:54,926] {logging_mixin.py:109} INFO - Running <TaskInstance: twitter_dag.twitter_aluraonline 2022-01-28T09:00:00+00:00 [running]> on host 1.0.0.127.in-addr.arpa
+[2022-02-02 10:55:54,980] {taskinstance.py:1254} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=twitter_dag
+AIRFLOW_CTX_TASK_ID=twitter_aluraonline
+AIRFLOW_CTX_EXECUTION_DATE=2022-01-28T09:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-01-28T09:00:00+00:00
+[2022-02-02 10:55:54,992] {taskinstance.py:1463} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/Users/bezerraescossia/Github/studies/twitter-project/.venv/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1165, in _run_raw_task
+    self._prepare_and_execute_task_with_callbacks(context, task)
+  File "/Users/bezerraescossia/Github/studies/twitter-project/.venv/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1283, in _prepare_and_execute_task_with_callbacks
+    result = self._execute_task(context, task_copy)
+  File "/Users/bezerraescossia/Github/studies/twitter-project/.venv/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1313, in _execute_task
+    result = task_copy.execute(context=context)
+  File "/Users/bezerraescossia/Github/studies/twitter-project/airflow/plugins/operators/twitter_operator.py", line 49, in execute
+    for pg in hook.run():
+  File "/Users/bezerraescossia/Github/studies/twitter-project/airflow/plugins/hooks/twitter_hook.py", line 52, in run
+    session = self.get_conn()
+  File "/Users/bezerraescossia/Github/studies/twitter-project/.venv/lib/python3.7/site-packages/airflow/providers/http/hooks/http.py", line 72, in get_conn
+    conn = self.get_connection(self.http_conn_id)
+  File "/Users/bezerraescossia/Github/studies/twitter-project/.venv/lib/python3.7/site-packages/airflow/hooks/base.py", line 68, in get_connection
+    conn = Connection.get_connection_from_secrets(conn_id)
+  File "/Users/bezerraescossia/Github/studies/twitter-project/.venv/lib/python3.7/site-packages/airflow/models/connection.py", line 379, in get_connection_from_secrets
+    raise AirflowNotFoundException(f"The conn_id `{conn_id}` isn't defined")
+airflow.exceptions.AirflowNotFoundException: The conn_id `twitter_default` isn't defined
+[2022-02-02 10:55:54,996] {taskinstance.py:1513} INFO - Marking task as FAILED. dag_id=twitter_dag, task_id=twitter_aluraonline, execution_date=20220128T090000, start_date=20220202T135554, end_date=20220202T135554
+[2022-02-02 10:55:55,018] {local_task_job.py:151} INFO - Task exited with return code 1
+[2022-02-02 10:55:55,046] {local_task_job.py:261} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2022-02-02 11:21:01,943] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: twitter_dag.twitter_aluraonline 2022-01-28T09:00:00+00:00 [queued]>
+[2022-02-02 11:21:01,954] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: twitter_dag.twitter_aluraonline 2022-01-28T09:00:00+00:00 [queued]>
+[2022-02-02 11:21:01,954] {taskinstance.py:1095} INFO - 
+--------------------------------------------------------------------------------
+[2022-02-02 11:21:01,955] {taskinstance.py:1096} INFO - Starting attempt 1 of 1
+[2022-02-02 11:21:01,955] {taskinstance.py:1097} INFO - 
+--------------------------------------------------------------------------------
+[2022-02-02 11:21:01,963] {taskinstance.py:1115} INFO - Executing <Task(TwitterOperator): twitter_aluraonline> on 2022-01-28T09:00:00+00:00
+[2022-02-02 11:21:01,966] {standard_task_runner.py:52} INFO - Started process 21891 to run task
+[2022-02-02 11:21:01,976] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'twitter_dag', 'twitter_aluraonline', '2022-01-28T09:00:00+00:00', '--job-id', '4', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/twitter_dag.py', '--cfg-path', '/var/folders/k6/528t8tnx5llf4w8y5xx1rrm80000gn/T/tmpup3ofj0j', '--error-file', '/var/folders/k6/528t8tnx5llf4w8y5xx1rrm80000gn/T/tmpb_3ltuxj']
+[2022-02-02 11:21:01,979] {standard_task_runner.py:77} INFO - Job 4: Subtask twitter_aluraonline
+[2022-02-02 11:21:02,022] {logging_mixin.py:109} INFO - Running <TaskInstance: twitter_dag.twitter_aluraonline 2022-01-28T09:00:00+00:00 [running]> on host 1.0.0.127.in-addr.arpa
+[2022-02-02 11:21:02,073] {taskinstance.py:1254} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=twitter_dag
+AIRFLOW_CTX_TASK_ID=twitter_aluraonline
+AIRFLOW_CTX_EXECUTION_DATE=2022-01-28T09:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-01-28T09:00:00+00:00
+[2022-02-02 11:21:02,084] {base.py:79} INFO - Using connection to: id: twitter_default. Host: https://api.twitter.com, Port: None, Schema: , Login: , Password: None, extra: {'Authorization': '***'}
+[2022-02-02 11:21:02,087] {twitter_hook.py:36} INFO - URL: https://api.twitter.com/2/tweets/search/recent?query=AluraOnline&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2022-01-28T09:00:00.00Z&end_time=2022-01-29T09:00:00.00Z
+[2022-02-02 11:21:02,596] {twitter_hook.py:36} INFO - URL: https://api.twitter.com/2/tweets/search/recent?query=AluraOnline&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2022-01-28T09:00:00.00Z&end_time=2022-01-29T09:00:00.00Z&next_token=b26v89c19zqg8o3fpe4823gd5s1g800fyl7iuq39l7se5
+[2022-02-02 11:21:02,841] {twitter_hook.py:36} INFO - URL: https://api.twitter.com/2/tweets/search/recent?query=AluraOnline&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2022-01-28T09:00:00.00Z&end_time=2022-01-29T09:00:00.00Z&next_token=b26v89c19zqg8o3fpe4823fgjdjhb47wbc98pvxjlcnel
+[2022-02-02 11:21:03,085] {twitter_hook.py:36} INFO - URL: https://api.twitter.com/2/tweets/search/recent?query=AluraOnline&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2022-01-28T09:00:00.00Z&end_time=2022-01-29T09:00:00.00Z&next_token=b26v89c19zqg8o3fpe4823evaou96m3ej1w0okiz99u9p
+[2022-02-02 11:21:03,325] {twitter_hook.py:36} INFO - URL: https://api.twitter.com/2/tweets/search/recent?query=AluraOnline&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2022-01-28T09:00:00.00Z&end_time=2022-01-29T09:00:00.00Z&next_token=b26v89c19zqg8o3fpe4823e9l8ihmly4qp9df1lkv62yl
+[2022-02-02 11:21:03,560] {twitter_hook.py:36} INFO - URL: https://api.twitter.com/2/tweets/search/recent?query=AluraOnline&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2022-01-28T09:00:00.00Z&end_time=2022-01-29T09:00:00.00Z&next_token=b26v89c19zqg8o3fpe4821c8f7x0jyxcar61mvfdxwxh9
+[2022-02-02 11:21:03,810] {twitter_hook.py:36} INFO - URL: https://api.twitter.com/2/tweets/search/recent?query=AluraOnline&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2022-01-28T09:00:00.00Z&end_time=2022-01-29T09:00:00.00Z&next_token=b26v89c19zqg8o3fpe4821bc0fdk62ebwugku4v38ehkt
+[2022-02-02 11:21:04,039] {twitter_hook.py:36} INFO - URL: https://api.twitter.com/2/tweets/search/recent?query=AluraOnline&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2022-01-28T09:00:00.00Z&end_time=2022-01-29T09:00:00.00Z&next_token=b26v89c19zqg8o3fpe4821aqh2edmiyfnrr7sqx22to59
+[2022-02-02 11:21:04,268] {twitter_hook.py:36} INFO - URL: https://api.twitter.com/2/tweets/search/recent?query=AluraOnline&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2022-01-28T09:00:00.00Z&end_time=2022-01-29T09:00:00.00Z&next_token=b26v89c19zqg8o3fpe4821afn59aczu7x7u1rhvrdvnnh
+[2022-02-02 11:21:04,498] {taskinstance.py:1219} INFO - Marking task as SUCCESS. dag_id=twitter_dag, task_id=twitter_aluraonline, execution_date=20220128T090000, start_date=20220202T142101, end_date=20220202T142104
+[2022-02-02 11:21:04,535] {local_task_job.py:151} INFO - Task exited with return code 0
+[2022-02-02 11:21:04,561] {local_task_job.py:261} INFO - 1 downstream tasks scheduled from follow-on schedule check

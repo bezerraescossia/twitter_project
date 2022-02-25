@@ -1,0 +1,89 @@
+[2022-02-02 10:01:47,582] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: twitter_dag.twitter_aluraonline 2022-02-01T09:00:00+00:00 [queued]>
+[2022-02-02 10:01:47,593] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: twitter_dag.twitter_aluraonline 2022-02-01T09:00:00+00:00 [queued]>
+[2022-02-02 10:01:47,593] {taskinstance.py:1095} INFO - 
+--------------------------------------------------------------------------------
+[2022-02-02 10:01:47,593] {taskinstance.py:1096} INFO - Starting attempt 1 of 1
+[2022-02-02 10:01:47,593] {taskinstance.py:1097} INFO - 
+--------------------------------------------------------------------------------
+[2022-02-02 10:01:47,604] {taskinstance.py:1115} INFO - Executing <Task(TwitterOperator): twitter_aluraonline> on 2022-02-01T09:00:00+00:00
+[2022-02-02 10:01:47,607] {standard_task_runner.py:52} INFO - Started process 15519 to run task
+[2022-02-02 10:01:47,619] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'twitter_dag', 'twitter_aluraonline', '2022-02-01T09:00:00+00:00', '--job-id', '39', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/twitter_dag.py', '--cfg-path', '/var/folders/k6/528t8tnx5llf4w8y5xx1rrm80000gn/T/tmpmsfzql5o', '--error-file', '/var/folders/k6/528t8tnx5llf4w8y5xx1rrm80000gn/T/tmpv_sy20zn']
+[2022-02-02 10:01:47,624] {standard_task_runner.py:77} INFO - Job 39: Subtask twitter_aluraonline
+[2022-02-02 10:01:47,677] {logging_mixin.py:109} INFO - Running <TaskInstance: twitter_dag.twitter_aluraonline 2022-02-01T09:00:00+00:00 [running]> on host 1.0.0.127.in-addr.arpa
+[2022-02-02 10:01:47,728] {taskinstance.py:1254} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=twitter_dag
+AIRFLOW_CTX_TASK_ID=twitter_aluraonline
+AIRFLOW_CTX_EXECUTION_DATE=2022-02-01T09:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-02-01T09:00:00+00:00
+[2022-02-02 10:01:47,738] {base.py:79} INFO - Using connection to: id: twitter_default. Host: https://api.twitter.com, Port: None, Schema: , Login: , Password: None, extra: {'Authorization': '***'}
+[2022-02-02 10:01:47,741] {twitter_hook.py:36} INFO - URL: https://api.twitter.com/2/tweets/search/recent?query=AluraOnline&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2022-02-01T09:00:00.00Z&end_time=2022-02-02T09:00:00.00Z
+[2022-02-02 10:01:47,756] {local_task_job.py:151} INFO - Task exited with return code Negsignal.SIGABRT
+[2022-02-02 10:01:47,781] {taskinstance.py:1513} INFO - Marking task as FAILED. dag_id=twitter_dag, task_id=twitter_aluraonline, execution_date=20220201T090000, start_date=20220202T130147, end_date=20220202T130147
+[2022-02-02 10:01:47,831] {local_task_job.py:261} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2022-02-02 10:56:12,272] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: twitter_dag.twitter_aluraonline 2022-02-01T09:00:00+00:00 [queued]>
+[2022-02-02 10:56:12,284] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: twitter_dag.twitter_aluraonline 2022-02-01T09:00:00+00:00 [queued]>
+[2022-02-02 10:56:12,284] {taskinstance.py:1095} INFO - 
+--------------------------------------------------------------------------------
+[2022-02-02 10:56:12,284] {taskinstance.py:1096} INFO - Starting attempt 1 of 1
+[2022-02-02 10:56:12,284] {taskinstance.py:1097} INFO - 
+--------------------------------------------------------------------------------
+[2022-02-02 10:56:12,296] {taskinstance.py:1115} INFO - Executing <Task(TwitterOperator): twitter_aluraonline> on 2022-02-01T09:00:00+00:00
+[2022-02-02 10:56:12,300] {standard_task_runner.py:52} INFO - Started process 19714 to run task
+[2022-02-02 10:56:12,318] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'twitter_dag', 'twitter_aluraonline', '2022-02-01T09:00:00+00:00', '--job-id', '7', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/twitter_dag.py', '--cfg-path', '/var/folders/k6/528t8tnx5llf4w8y5xx1rrm80000gn/T/tmp_vnjbaoa', '--error-file', '/var/folders/k6/528t8tnx5llf4w8y5xx1rrm80000gn/T/tmpovy68fdx']
+[2022-02-02 10:56:12,322] {standard_task_runner.py:77} INFO - Job 7: Subtask twitter_aluraonline
+[2022-02-02 10:56:12,380] {logging_mixin.py:109} INFO - Running <TaskInstance: twitter_dag.twitter_aluraonline 2022-02-01T09:00:00+00:00 [running]> on host 1.0.0.127.in-addr.arpa
+[2022-02-02 10:56:12,440] {taskinstance.py:1254} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=twitter_dag
+AIRFLOW_CTX_TASK_ID=twitter_aluraonline
+AIRFLOW_CTX_EXECUTION_DATE=2022-02-01T09:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-02-01T09:00:00+00:00
+[2022-02-02 10:56:12,456] {taskinstance.py:1463} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/Users/bezerraescossia/Github/studies/twitter-project/.venv/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1165, in _run_raw_task
+    self._prepare_and_execute_task_with_callbacks(context, task)
+  File "/Users/bezerraescossia/Github/studies/twitter-project/.venv/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1283, in _prepare_and_execute_task_with_callbacks
+    result = self._execute_task(context, task_copy)
+  File "/Users/bezerraescossia/Github/studies/twitter-project/.venv/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1313, in _execute_task
+    result = task_copy.execute(context=context)
+  File "/Users/bezerraescossia/Github/studies/twitter-project/airflow/plugins/operators/twitter_operator.py", line 49, in execute
+    for pg in hook.run():
+  File "/Users/bezerraescossia/Github/studies/twitter-project/airflow/plugins/hooks/twitter_hook.py", line 52, in run
+    session = self.get_conn()
+  File "/Users/bezerraescossia/Github/studies/twitter-project/.venv/lib/python3.7/site-packages/airflow/providers/http/hooks/http.py", line 72, in get_conn
+    conn = self.get_connection(self.http_conn_id)
+  File "/Users/bezerraescossia/Github/studies/twitter-project/.venv/lib/python3.7/site-packages/airflow/hooks/base.py", line 68, in get_connection
+    conn = Connection.get_connection_from_secrets(conn_id)
+  File "/Users/bezerraescossia/Github/studies/twitter-project/.venv/lib/python3.7/site-packages/airflow/models/connection.py", line 379, in get_connection_from_secrets
+    raise AirflowNotFoundException(f"The conn_id `{conn_id}` isn't defined")
+airflow.exceptions.AirflowNotFoundException: The conn_id `twitter_default` isn't defined
+[2022-02-02 10:56:12,460] {taskinstance.py:1513} INFO - Marking task as FAILED. dag_id=twitter_dag, task_id=twitter_aluraonline, execution_date=20220201T090000, start_date=20220202T135612, end_date=20220202T135612
+[2022-02-02 10:56:12,499] {local_task_job.py:151} INFO - Task exited with return code 1
+[2022-02-02 10:56:12,530] {local_task_job.py:261} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2022-02-02 11:22:49,486] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: twitter_dag.twitter_aluraonline 2022-02-01T09:00:00+00:00 [queued]>
+[2022-02-02 11:22:49,496] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: twitter_dag.twitter_aluraonline 2022-02-01T09:00:00+00:00 [queued]>
+[2022-02-02 11:22:49,497] {taskinstance.py:1095} INFO - 
+--------------------------------------------------------------------------------
+[2022-02-02 11:22:49,497] {taskinstance.py:1096} INFO - Starting attempt 1 of 1
+[2022-02-02 11:22:49,497] {taskinstance.py:1097} INFO - 
+--------------------------------------------------------------------------------
+[2022-02-02 11:22:49,504] {taskinstance.py:1115} INFO - Executing <Task(TwitterOperator): twitter_aluraonline> on 2022-02-01T09:00:00+00:00
+[2022-02-02 11:22:49,507] {standard_task_runner.py:52} INFO - Started process 22065 to run task
+[2022-02-02 11:22:49,515] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'twitter_dag', 'twitter_aluraonline', '2022-02-01T09:00:00+00:00', '--job-id', '12', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/twitter_dag.py', '--cfg-path', '/var/folders/k6/528t8tnx5llf4w8y5xx1rrm80000gn/T/tmp6j6ydpub', '--error-file', '/var/folders/k6/528t8tnx5llf4w8y5xx1rrm80000gn/T/tmps97yjv47']
+[2022-02-02 11:22:49,517] {standard_task_runner.py:77} INFO - Job 12: Subtask twitter_aluraonline
+[2022-02-02 11:22:49,558] {logging_mixin.py:109} INFO - Running <TaskInstance: twitter_dag.twitter_aluraonline 2022-02-01T09:00:00+00:00 [running]> on host MacBook-Air-de-Rafael.local
+[2022-02-02 11:22:49,606] {taskinstance.py:1254} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=twitter_dag
+AIRFLOW_CTX_TASK_ID=twitter_aluraonline
+AIRFLOW_CTX_EXECUTION_DATE=2022-02-01T09:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-02-01T09:00:00+00:00
+[2022-02-02 11:22:49,614] {base.py:79} INFO - Using connection to: id: twitter_default. Host: https://api.twitter.com, Port: None, Schema: , Login: , Password: None, extra: {'Authorization': '***'}
+[2022-02-02 11:22:49,616] {twitter_hook.py:36} INFO - URL: https://api.twitter.com/2/tweets/search/recent?query=AluraOnline&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2022-02-01T09:00:00.00Z&end_time=2022-02-02T09:00:00.00Z
+[2022-02-02 11:22:50,119] {twitter_hook.py:36} INFO - URL: https://api.twitter.com/2/tweets/search/recent?query=AluraOnline&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2022-02-01T09:00:00.00Z&end_time=2022-02-02T09:00:00.00Z&next_token=b26v89c19zqg8o3fpe48hjoqscfayrhl2qbcpmrgkiikd
+[2022-02-02 11:22:50,366] {twitter_hook.py:36} INFO - URL: https://api.twitter.com/2/tweets/search/recent?query=AluraOnline&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2022-02-01T09:00:00.00Z&end_time=2022-02-02T09:00:00.00Z&next_token=b26v89c19zqg8o3fpe48hhkwys6l0rqwxf4dhyjlgnvr1
+[2022-02-02 11:22:50,607] {twitter_hook.py:36} INFO - URL: https://api.twitter.com/2/tweets/search/recent?query=AluraOnline&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2022-02-01T09:00:00.00Z&end_time=2022-02-02T09:00:00.00Z&next_token=b26v89c19zqg8o3fpe48hhjeogm8sr9iczajgyde47m9p
+[2022-02-02 11:22:50,873] {taskinstance.py:1219} INFO - Marking task as SUCCESS. dag_id=twitter_dag, task_id=twitter_aluraonline, execution_date=20220201T090000, start_date=20220202T142249, end_date=20220202T142250
+[2022-02-02 11:22:50,899] {local_task_job.py:151} INFO - Task exited with return code 0
+[2022-02-02 11:22:50,925] {local_task_job.py:261} INFO - 1 downstream tasks scheduled from follow-on schedule check

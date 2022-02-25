@@ -1,0 +1,44 @@
+[2022-01-31 17:26:20,931] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: twitter_dag.transform_twitter_alura_online 2022-01-31T20:25:53.658766+00:00 [queued]>
+[2022-01-31 17:26:20,939] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: twitter_dag.transform_twitter_alura_online 2022-01-31T20:25:53.658766+00:00 [queued]>
+[2022-01-31 17:26:20,940] {taskinstance.py:1095} INFO - 
+--------------------------------------------------------------------------------
+[2022-01-31 17:26:20,940] {taskinstance.py:1096} INFO - Starting attempt 1 of 1
+[2022-01-31 17:26:20,940] {taskinstance.py:1097} INFO - 
+--------------------------------------------------------------------------------
+[2022-01-31 17:26:20,949] {taskinstance.py:1115} INFO - Executing <Task(SparkSubmitOperator): transform_twitter_alura_online> on 2022-01-31T20:25:53.658766+00:00
+[2022-01-31 17:26:20,952] {standard_task_runner.py:52} INFO - Started process 82006 to run task
+[2022-01-31 17:26:20,963] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'twitter_dag', 'transform_twitter_alura_online', '2022-01-31T20:25:53.658766+00:00', '--job-id', '18', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/twitter_dag.py', '--cfg-path', '/var/folders/k6/528t8tnx5llf4w8y5xx1rrm80000gn/T/tmper1phqgb', '--error-file', '/var/folders/k6/528t8tnx5llf4w8y5xx1rrm80000gn/T/tmpp1u6s_z1']
+[2022-01-31 17:26:20,965] {standard_task_runner.py:77} INFO - Job 18: Subtask transform_twitter_alura_online
+[2022-01-31 17:26:21,082] {logging_mixin.py:109} INFO - Running <TaskInstance: twitter_dag.transform_twitter_alura_online 2022-01-31T20:25:53.658766+00:00 [running]> on host 1.0.0.127.in-addr.arpa
+[2022-01-31 17:26:21,180] {taskinstance.py:1254} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=twitter_dag
+AIRFLOW_CTX_TASK_ID=transform_twitter_alura_online
+AIRFLOW_CTX_EXECUTION_DATE=2022-01-31T20:25:53.658766+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-01-31T20:25:53.658766+00:00
+[2022-01-31 17:26:21,191] {base.py:79} INFO - Using connection to: id: spark_default. Host: local, Port: None, Schema: , Login: , Password: None, extra: {'spark-home': '/Users/bezerraescossia/spark-3.2.0-bin-hadoop3.2'}
+[2022-01-31 17:26:21,194] {spark_submit.py:360} INFO - Spark-Submit cmd: /Users/bezerraescossia/spark-3.2.0-bin-hadoop3.2/bin/spark-submit --master local --name twitter_transformation /Users/bezerraescossia/Github/studies/twitter-project/spark/transformation.py --src /Users/bezerraescossia/Github/studies/twitter-project/datalake/bronze/extract_date=2022-01-23 --dest /Users/bezerraescossia/Github/studies/twitter-project/datalake/silver --process_date 2022-01-31
+[2022-01-31 17:26:25,066] {spark_submit.py:514} INFO - 22/01/31 17:26:25 WARN Utils: Your hostname, MacBook-Air-de-Rafael.local resolves to a loopback address: 127.0.0.1; using 192.168.0.44 instead (on interface en0)
+[2022-01-31 17:26:25,068] {spark_submit.py:514} INFO - 22/01/31 17:26:25 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+[2022-01-31 17:26:27,834] {spark_submit.py:514} INFO - usage: transformation.py [-h] --src SRC --dest DEST --process-date
+[2022-01-31 17:26:27,835] {spark_submit.py:514} INFO - PROCESS_DATE
+[2022-01-31 17:26:27,836] {spark_submit.py:514} INFO - transformation.py: error: the following arguments are required: --process-date
+[2022-01-31 17:26:27,905] {spark_submit.py:514} INFO - log4j:WARN No appenders could be found for logger (org.apache.spark.util.ShutdownHookManager).
+[2022-01-31 17:26:27,905] {spark_submit.py:514} INFO - log4j:WARN Please initialize the log4j system properly.
+[2022-01-31 17:26:27,906] {spark_submit.py:514} INFO - log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+[2022-01-31 17:26:27,960] {taskinstance.py:1463} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/Users/bezerraescossia/Github/studies/twitter-project/.venv/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1165, in _run_raw_task
+    self._prepare_and_execute_task_with_callbacks(context, task)
+  File "/Users/bezerraescossia/Github/studies/twitter-project/.venv/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1283, in _prepare_and_execute_task_with_callbacks
+    result = self._execute_task(context, task_copy)
+  File "/Users/bezerraescossia/Github/studies/twitter-project/.venv/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1313, in _execute_task
+    result = task_copy.execute(context=context)
+  File "/Users/bezerraescossia/Github/studies/twitter-project/.venv/lib/python3.7/site-packages/airflow/providers/apache/spark/operators/spark_submit.py", line 182, in execute
+    self._hook.submit(self._application)
+  File "/Users/bezerraescossia/Github/studies/twitter-project/.venv/lib/python3.7/site-packages/airflow/providers/apache/spark/hooks/spark_submit.py", line 446, in submit
+    f"Cannot execute: {self._mask_cmd(spark_submit_cmd)}. Error code is: {returncode}."
+airflow.exceptions.AirflowException: Cannot execute: /Users/bezerraescossia/spark-3.2.0-bin-hadoop3.2/bin/spark-submit --master local --name twitter_transformation /Users/bezerraescossia/Github/studies/twitter-project/spark/transformation.py --src /Users/bezerraescossia/Github/studies/twitter-project/datalake/bronze/extract_date=2022-01-23 --dest /Users/bezerraescossia/Github/studies/twitter-project/datalake/silver --process_date 2022-01-31. Error code is: 2.
+[2022-01-31 17:26:27,972] {taskinstance.py:1513} INFO - Marking task as FAILED. dag_id=twitter_dag, task_id=transform_twitter_alura_online, execution_date=20220131T202553, start_date=20220131T202620, end_date=20220131T202627
+[2022-01-31 17:26:28,031] {local_task_job.py:151} INFO - Task exited with return code 1
+[2022-01-31 17:26:28,080] {local_task_job.py:261} INFO - 0 downstream tasks scheduled from follow-on schedule check

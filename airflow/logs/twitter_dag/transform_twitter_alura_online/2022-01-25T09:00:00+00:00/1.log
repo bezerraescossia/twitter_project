@@ -1,0 +1,73 @@
+[2022-01-31 18:01:51,894] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: twitter_dag.transform_twitter_alura_online 2022-01-25T09:00:00+00:00 [queued]>
+[2022-01-31 18:01:51,922] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: twitter_dag.transform_twitter_alura_online 2022-01-25T09:00:00+00:00 [queued]>
+[2022-01-31 18:01:51,922] {taskinstance.py:1095} INFO - 
+--------------------------------------------------------------------------------
+[2022-01-31 18:01:51,922] {taskinstance.py:1096} INFO - Starting attempt 1 of 1
+[2022-01-31 18:01:51,922] {taskinstance.py:1097} INFO - 
+--------------------------------------------------------------------------------
+[2022-01-31 18:01:51,935] {taskinstance.py:1115} INFO - Executing <Task(SparkSubmitOperator): transform_twitter_alura_online> on 2022-01-25T09:00:00+00:00
+[2022-01-31 18:01:51,940] {standard_task_runner.py:52} INFO - Started process 85072 to run task
+[2022-01-31 18:01:51,960] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'twitter_dag', 'transform_twitter_alura_online', '2022-01-25T09:00:00+00:00', '--job-id', '22', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/twitter_dag.py', '--cfg-path', '/var/folders/k6/528t8tnx5llf4w8y5xx1rrm80000gn/T/tmphl11f_6v', '--error-file', '/var/folders/k6/528t8tnx5llf4w8y5xx1rrm80000gn/T/tmpn7p1b5q5']
+[2022-01-31 18:01:51,964] {standard_task_runner.py:77} INFO - Job 22: Subtask transform_twitter_alura_online
+[2022-01-31 18:01:52,076] {logging_mixin.py:109} INFO - Running <TaskInstance: twitter_dag.transform_twitter_alura_online 2022-01-25T09:00:00+00:00 [running]> on host 1.0.0.127.in-addr.arpa
+[2022-01-31 18:01:52,160] {taskinstance.py:1254} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=twitter_dag
+AIRFLOW_CTX_TASK_ID=transform_twitter_alura_online
+AIRFLOW_CTX_EXECUTION_DATE=2022-01-25T09:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-01-25T09:00:00+00:00
+[2022-01-31 18:01:52,174] {base.py:79} INFO - Using connection to: id: spark_default. Host: local, Port: None, Schema: , Login: , Password: None, extra: {'spark-home': '/Users/bezerraescossia/spark-3.2.0-bin-hadoop3.2'}
+[2022-01-31 18:01:52,179] {spark_submit.py:360} INFO - Spark-Submit cmd: /Users/bezerraescossia/spark-3.2.0-bin-hadoop3.2/bin/spark-submit --master local --name twitter_transformation /Users/bezerraescossia/Github/studies/twitter-project/spark/transformation.py --src /Users/bezerraescossia/Github/studies/twitter-project/datalake/bronze/extract_date=2022-01-25 --dest /Users/bezerraescossia/Github/studies/twitter-project/datalake/silver --process-date 2022-01-25
+[2022-01-31 18:01:57,152] {spark_submit.py:514} INFO - 22/01/31 18:01:57 WARN Utils: Your hostname, MacBook-Air-de-Rafael.local resolves to a loopback address: 127.0.0.1; using 192.168.0.44 instead (on interface en0)
+[2022-01-31 18:01:57,154] {spark_submit.py:514} INFO - 22/01/31 18:01:57 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+[2022-01-31 18:01:59,201] {spark_submit.py:514} INFO - Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+[2022-01-31 18:01:59,221] {spark_submit.py:514} INFO - 22/01/31 18:01:59 INFO SparkContext: Running Spark version 3.2.0
+[2022-01-31 18:01:59,621] {spark_submit.py:514} INFO - 22/01/31 18:01:59 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2022-01-31 18:01:59,833] {spark_submit.py:514} INFO - 22/01/31 18:01:59 INFO ResourceUtils: ==============================================================
+[2022-01-31 18:01:59,833] {spark_submit.py:514} INFO - 22/01/31 18:01:59 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2022-01-31 18:01:59,834] {spark_submit.py:514} INFO - 22/01/31 18:01:59 INFO ResourceUtils: ==============================================================
+[2022-01-31 18:01:59,834] {spark_submit.py:514} INFO - 22/01/31 18:01:59 INFO SparkContext: Submitted application: twitter_transformation
+[2022-01-31 18:01:59,888] {spark_submit.py:514} INFO - 22/01/31 18:01:59 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2022-01-31 18:01:59,915] {spark_submit.py:514} INFO - 22/01/31 18:01:59 INFO ResourceProfile: Limiting resource is cpu
+[2022-01-31 18:01:59,917] {spark_submit.py:514} INFO - 22/01/31 18:01:59 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2022-01-31 18:02:00,064] {spark_submit.py:514} INFO - 22/01/31 18:02:00 INFO SecurityManager: Changing view acls to: bezerraescossia
+[2022-01-31 18:02:00,066] {spark_submit.py:514} INFO - 22/01/31 18:02:00 INFO SecurityManager: Changing modify acls to: bezerraescossia
+[2022-01-31 18:02:00,067] {spark_submit.py:514} INFO - 22/01/31 18:02:00 INFO SecurityManager: Changing view acls groups to:
+[2022-01-31 18:02:00,067] {spark_submit.py:514} INFO - 22/01/31 18:02:00 INFO SecurityManager: Changing modify acls groups to:
+[2022-01-31 18:02:00,068] {spark_submit.py:514} INFO - 22/01/31 18:02:00 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(bezerraescossia); groups with view permissions: Set(); users  with modify permissions: Set(bezerraescossia); groups with modify permissions: Set()
+[2022-01-31 18:02:00,676] {spark_submit.py:514} INFO - 22/01/31 18:02:00 INFO Utils: Successfully started service 'sparkDriver' on port 56732.
+[2022-01-31 18:02:00,768] {spark_submit.py:514} INFO - 22/01/31 18:02:00 INFO SparkEnv: Registering MapOutputTracker
+[2022-01-31 18:02:00,892] {spark_submit.py:514} INFO - 22/01/31 18:02:00 INFO SparkEnv: Registering BlockManagerMaster
+[2022-01-31 18:02:00,975] {spark_submit.py:514} INFO - 22/01/31 18:02:00 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2022-01-31 18:02:00,976] {spark_submit.py:514} INFO - 22/01/31 18:02:00 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2022-01-31 18:02:00,984] {spark_submit.py:514} INFO - 22/01/31 18:02:00 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2022-01-31 18:02:01,087] {spark_submit.py:514} INFO - 22/01/31 18:02:01 INFO DiskBlockManager: Created local directory at /private/var/folders/k6/528t8tnx5llf4w8y5xx1rrm80000gn/T/blockmgr-7eb0d6c5-ea6a-41ae-9346-0cbc74b4541a
+[2022-01-31 18:02:01,206] {spark_submit.py:514} INFO - 22/01/31 18:02:01 INFO MemoryStore: MemoryStore started with capacity 366.3 MiB
+[2022-01-31 18:02:01,262] {spark_submit.py:514} INFO - 22/01/31 18:02:01 INFO SparkEnv: Registering OutputCommitCoordinator
+[2022-01-31 18:02:01,875] {spark_submit.py:514} INFO - 22/01/31 18:02:01 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[2022-01-31 18:02:01,995] {spark_submit.py:514} INFO - 22/01/31 18:02:01 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://192.168.0.44:4040
+[2022-01-31 18:02:02,308] {local_task_job.py:191} WARNING - The recorded hostname 1.0.0.127.in-addr.arpa does not match this instance's hostname macbook-air-de-rafael.local
+[2022-01-31 18:02:02,318] {process_utils.py:100} INFO - Sending Signals.SIGTERM to GPID 85072
+[2022-01-31 18:02:02,319] {taskinstance.py:1236} ERROR - Received SIGTERM. Terminating subprocesses.
+[2022-01-31 18:02:02,320] {spark_submit.py:649} INFO - Sending kill signal to spark-submit
+[2022-01-31 18:02:02,334] {taskinstance.py:1463} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/Users/bezerraescossia/Github/studies/twitter-project/.venv/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1165, in _run_raw_task
+    self._prepare_and_execute_task_with_callbacks(context, task)
+  File "/Users/bezerraescossia/Github/studies/twitter-project/.venv/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1283, in _prepare_and_execute_task_with_callbacks
+    result = self._execute_task(context, task_copy)
+  File "/Users/bezerraescossia/Github/studies/twitter-project/.venv/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1313, in _execute_task
+    result = task_copy.execute(context=context)
+  File "/Users/bezerraescossia/Github/studies/twitter-project/.venv/lib/python3.7/site-packages/airflow/providers/apache/spark/operators/spark_submit.py", line 182, in execute
+    self._hook.submit(self._application)
+  File "/Users/bezerraescossia/Github/studies/twitter-project/.venv/lib/python3.7/site-packages/airflow/providers/apache/spark/hooks/spark_submit.py", line 433, in submit
+    self._process_spark_submit_log(iter(self._submit_sp.stdout))  # type: ignore
+  File "/Users/bezerraescossia/Github/studies/twitter-project/.venv/lib/python3.7/site-packages/airflow/providers/apache/spark/hooks/spark_submit.py", line 482, in _process_spark_submit_log
+    for line in itr:
+  File "/Users/bezerraescossia/Github/studies/twitter-project/.venv/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1238, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2022-01-31 18:02:02,343] {taskinstance.py:1513} INFO - Marking task as FAILED. dag_id=twitter_dag, task_id=transform_twitter_alura_online, execution_date=20220125T090000, start_date=20220131T210151, end_date=20220131T210202
+[2022-01-31 18:02:02,384] {process_utils.py:66} INFO - Process psutil.Process(pid=85073, status='terminated', started='18:01:52') (85073) terminated with exit code None
+[2022-01-31 18:02:02,385] {process_utils.py:66} INFO - Process psutil.Process(pid=85072, status='terminated', exitcode=1, started='18:01:51') (85072) terminated with exit code 1
+[2022-01-31 18:02:02,386] {process_utils.py:66} INFO - Process psutil.Process(pid=85086, status='terminated', started='18:01:57') (85086) terminated with exit code None
